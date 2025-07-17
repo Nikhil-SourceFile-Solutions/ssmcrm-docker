@@ -1,0 +1,51 @@
+.form-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.form-input-group {
+    margin-top: auto; /* Pushes the element to the bottom */
+}
+
+.App {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .countdown-timer {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    display: inline-block;
+  }
+
+
+.custom-confirm-button {
+    background-color: #e7515a !important; /* Red background color */
+    color: white !important; /* White text color */
+    border: none !important; /* Remove any border */
+    padding: 5px;
+    /* padding: 10px 10px !important; */
+    border-radius: 5px !important; /* Add some border radius */
+    cursor: pointer; /* Change cursor to pointer */
+}
+/* Custom styling for SweetAlert2 buttons */
+.custom-confirm-button {
+    background-color: red !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+}
+
+.custom-cancel-button {
+    background-color: #007bff !important; /* Bootstrap primary color */
+    color: white !important;
+    border: none !important;
+    margin-left: 10px;
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+}
