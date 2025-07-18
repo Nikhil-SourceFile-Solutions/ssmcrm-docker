@@ -4,13 +4,23 @@ services:
       context: .
     image: laravel-react-app
     container_name: laravel-react-app
+    working_dir: /var/www
     volumes:
       - .:/var/www
     ports:
-      - "8000:8000"
-      - "5173:5173"  # Laravel will run on 8000
+      - "8000:8000"   # Laravel (php artisan serve or web server)
+      - "5173:5173"   # Vite (for React or Laravel Vite)
     depends_on:
       - db
+      - redis
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: ssmultiversecrm_crm
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
 
   db:
     image: mysql:8
@@ -27,7 +37,7 @@ services:
     image: redis:alpine
     container_name: redis-server
     ports:
-      - "6379:6379"    
+      - "6379:6379"
 
 volumes:
   dbdata:
