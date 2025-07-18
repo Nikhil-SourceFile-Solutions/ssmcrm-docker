@@ -25,7 +25,7 @@ WORKDIR /var/www
 COPY . .
 
 # Install PHP dependencies
-RUN composer install --optimize-autoloader --no-dev
+RUN composer install 
 
 # Set correct permissions
 RUN chown -R www-data:www-data /var/www \
@@ -34,5 +34,4 @@ RUN chown -R www-data:www-data /var/www \
 # Expose port used by php-fpm
 EXPOSE 9000
 
-# Start php-fpm
-CMD ["php-fpm"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
